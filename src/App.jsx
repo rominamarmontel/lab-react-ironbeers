@@ -7,7 +7,7 @@ import NewBeer from './pages/NewBeer/NewBeer'
 import Home from './pages/Home/Home'
 import OneBeer from './pages/OneBeer/OneBeer'
 import Layout from './pages/Layout/Layout'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

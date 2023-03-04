@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import BeerCard from '../../components/BeerCard/BeerCard'
+// eslint-disable-next-line 
 import Search from '../../components/Search/Search';
+// eslint-disable-next-line 
 import { Divider, Row } from 'antd';
 
 const Beers = () => {
   const [beers, setBeers] = useState(null)
+  // eslint-disable-next-line 
   const [searchKeyword, updateSearchKeyword] = useState('');
 
   useEffect(() => {
