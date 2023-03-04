@@ -1,0 +1,46 @@
+.OneBeerCard {
+  width: 100%;
+}
+.container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+.OneBeerCard .first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.OneBeerCard .first h1 {
+  font-weight: normal;
+  padding-bottom: 1rem;
+}
+.OneBeerCard .first p {
+  font-size: 1.5rem;
+  color: rgb(176, 175, 175);
+}
+.OneBeerCard .second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.OneBeerCard .tagline {
+  color: gray;
+  font-weight: 500;
+}
+.OneBeerCard .first_brewed {
+  font-weight: 800;
+  font-size: .8rem;
+}
+.OneBeerCard .description {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.OneBeerCard .contributed_by {
+  color: gray;
+  text-align: left;
+  font-weight: 800;
+  font-size: .8rem;
+}

@@ -1,0 +1,38 @@
+section {
+  display: flex;
+  justify-content: center;
+}
+form {
+  width: 80%;
+}
+.input-form, .description {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  border-radius: 20px;
+  border: none;
+  border: 1px solid var(--color-liner);
+  padding: .5rem;
+}
+.description input {
+  height: 5rem;
+}
+label {
+  padding-top: 2rem;
+  font-size: .8rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  padding-bottom: .5rem;
+}
+button {
+  border: none;
+  border-radius: 20px;
+  background-color: var(--color-navbar);
+  color: #fff;
+  padding:.5rem 1rem;
+  font-size: .8rem;
+  font-weight: bold;
+  width: 100%;
+  margin: 2rem 0;
+}
