@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import BeerCard from '../../components/BeerCard/BeerCard'
-// eslint-disable-next-line 
+import { useParams } from 'react-router-dom'
 import Search from '../../components/Search/Search';
-// eslint-disable-next-line 
-import { Divider, Row } from 'antd';
 
 const Beers = () => {
   const [beers, setBeers] = useState(null)
-  // eslint-disable-next-line 
   const [searchKeyword, updateSearchKeyword] = useState('');
+  const { q } = useParams()
+  const url = 'https://ih-beers-api2.herokuapp.com/beers/search'
 
   useEffect(() => {
-    fetch('https://ih-beers-api2.herokuapp.com/beers/search?q={query}')
+    fetch(`${url}${q}`)
     .then((rawResponse) => rawResponse.json())
     .then((reponse) => {
       updateSearchKeyword(reponse)
     })
-  }, [])
+    .catch((error) => console.log(error))
+  }, [q, url])
+
+  // if (!searchKeyword) {
+  //   return <div className='Loading'>Loading...</div>
+  // }
 
   useEffect(() => {
     fetch('https://ih-beers-api2.herokuapp.com/beers')
@@ -31,30 +35,22 @@ const Beers = () => {
     return <div className="Loading">Loading...</div>
   }
 
-  // const handleInputChange = (event) => {
-  //   updateSearchKeyword(event.target.value);
-  // };
-  // const filteredList = beers.filter((item) => {
-  //   return item.name.toLowerCase().includes(searchKeyword.toLowerCase());
-  // });
+  const handleInputChange = (event) => {
+    updateSearchKeyword(event.target.value);
+  };
+  const filteredList = beers.filter((item) => {
+    return item.name.toLowerCase().includes(searchKeyword.toLowerCase());
+  });
 
   return (
     <>
       <div>
-        {/* <Search handleInputChange={handleInputChange} />
-        <Divider>Search</Divider>
-
-        <Row style={{ width: '100%', justifyContent: 'center' }}>
+        <Search handleInputChange={handleInputChange} />
           {filteredList.map((beer) => {
-            return <BeerCard beer={beer} />;
+            return <BeerCard key={beer._id} beer={beer} />;
           })}
-        </Row> */}
       </div>
-      <div>
-        {beers.map((beer) => {
-          return <BeerCard key={beer._id} beer={beer} />
-        })}
-      </div>
+
   </>
   )
 }
