@@ -1,7 +1,10 @@
-.service-box {
+.Home {
   border-left: 1px solid var(--color-liner);
   border-right: 1px solid var(--color-liner);
-  margin: 0 2rem;
+}
+.content {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 .service-box h1 {
   color: black;
@@ -11,6 +14,9 @@
 .service-box p {
   text-align: left;
   color: gray;
+}
+.service-box img {
+  width: 100%;
 }
 
 
