@@ -11,3 +11,7 @@
 .Navbar a {
   color: #fff;
 }
+.Navbar img {
+  width: 3rem;
+  color: #fff;
+}

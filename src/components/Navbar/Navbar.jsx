@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import './Navbar.css'
+import urlHome from '../../assets/home-page.png'
 
-// import Apartments from '../../pages/Apartments/Apartments'
 const Navbar = () => {
   return (
     <>
       <nav className="Navbar">
-        <NavLink to="/">HOME</NavLink>
+        <NavLink to="/"><img src={urlHome} alt='home' /></NavLink>
       </nav>
       <Outlet />
     </>
